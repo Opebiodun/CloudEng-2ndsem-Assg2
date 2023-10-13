@@ -9,7 +9,7 @@ fi
 # Check if the required Vagrant box is available
 vagrant box list | grep "ubuntu/focal64" || {
     echo "Downloading Ubuntu 20.0 Vagrant box..."
-    vagrant box add ubuntu/folca64
+    vagrant box add ubuntu/focal64
 }
 
 # Create a directory for the Vagrant project
@@ -26,16 +26,14 @@ vagrant init ubuntu/focal64
 
 cat <<EOF > Vagrantfile
 Vagrant.configure("2") do |config|
-
 config.vm.define "master" do |master|
-
     master.vm.hostname = "master"
     master.vm.box = "ubuntu/focal64"
     master.vm.network "private_network", ip: "192.168.33.11"
 
     master.vm.provision "shell", inline: <<-SHELL
     sudo apt-get update && sudo apt-get upgrade -y
-     sudo apt-get install -y avahi-daemon libnss-mdns
+    sudo apt-get install -y avahi-daemon libnss-mdns
     sudo apt install sshpass -y
    # sudo sed -i 's/PasswordAuthentication no/PasswordAuthentication yes/' /etc/ssh/sshd_config
    # sudo systemctl restart sshd
@@ -43,7 +41,6 @@ config.vm.define "master" do |master|
   end
 
   config.vm.define "slave" do |slave|
-
     slave.vm.hostname = "slave"
     slave.vm.box = "ubuntu/focal64"
     slave.vm.network "private_network", ip: "192.168.33.12"
