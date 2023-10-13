@@ -21,7 +21,7 @@ The documentation outlines the steps for deploying a Vagrant-based Ubuntu cluste
     
     - Check for Vagrant and VirtualBox installation
     - Create Clusterlamp Directory 
-    - Initialized Vagrant and Install if now aavilable
+    - Initialized and Install Vagrant if not available
     - Generate an SSH key if missing.
     - Configure SSH key-based authentication between the 'Master' and 'Slave'.
     - Copy test data from 'Master' to 'Slave'.
