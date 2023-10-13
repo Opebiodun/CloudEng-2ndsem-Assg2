@@ -2,7 +2,7 @@
 
 # Check if Vagrant is installed
 if ! [ -x "$(command -v vagrant)" ]; then
-    echo "Vagrant is not installed. Please install Vagrant and retry."
+    echo "Vagrant is not installed. Please install Vagrant and retry.."
     exit 1
 fi
 
